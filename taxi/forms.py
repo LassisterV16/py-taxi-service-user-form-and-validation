@@ -21,7 +21,7 @@ class DriverCreationForm(UserCreationForm):
     )
 
     class Meta(UserCreationForm.Meta):
-        model = Driver
+        model = get_user_model()
         fields = UserCreationForm.Meta.fields + ("first_name", "last_name", )
 
 
@@ -32,7 +32,7 @@ class DriverLicenseUpdateForm(forms.ModelForm):
     )
 
     class Meta:
-        model = Driver
+        model = get_user_model()
         fields = ["license_number", ]
 
 
